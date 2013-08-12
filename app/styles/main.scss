@@ -1,0 +1,94 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import "bootstrap-sass/lib/bootstrap";
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+.endpoint{
+    background-color: white;
+    padding:10px;
+    border: 1px solid grey;
+    margin-bottom:10px;
+}
+
+.endpoint__method{
+    font-weight:bold;
+    font-size:1.2em;
+    padding:10px;
+    display:block-inline;
+    background-color:blue;
+    color:white;
+    margin-right:10px;
+}
+
+.endpoint__url{
+    font-size:1.2em;
+    font-weight:bold;
+
+}
+
+.endpoint__heading{
+
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.endpoint_description{
+    font-size:1.1em;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.endpoint__response-code{
+    margin-left:10px;
+    font-weight:bold;
+    color:white;
+    padding:5px;
+    display:block-inline;
+}
+
+.endpoint__response-code--success{
+    background-color:green;
+
+}
+
+.endpoint__response-code--error{
+    background-color:orange;
+}
+
+.endpoint__params{
+    margin-bottom:20px;
+}
+
+.endpoint__param{
+
+}
+
+.endpoint__param-input{
+    margin-right:10px;
+}
+
+.endpoint__param-label{
+    display:inline;
+    margin-right:10px;
+    width:100px;
+}
+
+.endpoint__param-type{
+    margin-right:10px;
+}
+
+.docs__title{
+    margin-top: 70px;
+    margin-bottom: 10px;
+}

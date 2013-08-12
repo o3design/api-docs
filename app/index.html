@@ -1,0 +1,136 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+</head>
+  <body ng-app="docs.giv2giv.orgApp">
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="" ng-controller="MainCtrl">
+      <api-docs docs-url="www.giv2giv.org/api" docs-ssl="true" docs-description="Live docs for the Giv2Giv API.">
+          
+          <h2 class="docs__title">DONOR MANAGEMENT</h2>
+          <endpoint ep-url="/donors.json" ep-method="post" ep-format="json"
+            ep-description="Create a new donor.">
+            <param name="email" type="string" description="The email of the user you wish to authenticate." default="demo@example.com" required="true"></param>
+            <param name="password" type="string" description="The password used to authenticate the user." default="Super@!rdUnguess#!@Passw*rd" required="true"></param>
+            <param name="name" type="string" description="The username for this user" default="John" required="true"></param>
+          </endpoint>
+
+          <endpoint ep-url="/donors.json" ep-method="get" ep-format="json"
+            ep-description="Show donor info">
+          </endpoint>
+
+          <endpoint ep-url="/donors.json" ep-method="put" ep-format="json"
+            ep-description="Create a new donor.">
+            <param name="name" type="string" description="The username for this user" default="John" required="true"></param>
+          </endpoint>
+
+          <h2 class="docs__title">PAYMENT ACCOUNT MANAGEMENT</h2>
+
+          <endpoint ep-url="/donors/payment_accounts.json" ep-method="post" ep-format="json" 
+            ep-description="Create a new donor.">
+            <param name="processor" type="string" description="Name of payment processor" default="Dwolla" required="true"></param>
+            <param name="token" type="string" description="Payment token." default="1asdf23" required="true"></param>
+          </endpoint>
+
+          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="get" ep-format="json" 
+            ep-description="Show specific payment account">
+            <param name="id" type="url" description="Id of the payment account." default="1234"></param>
+          </endpoint>
+
+           <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="put" ep-format="json" 
+            ep-description="Show specific payment account">
+            <param name="id" type="url" description="Id of the payment account." default="1234"></param>
+             <param name="processor" type="string" description="Name of payment processor" default="Dwolla" required="true"></param>
+          </endpoint>
+
+          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="delete" ep-format="json" 
+            ep-description="Destroy payment account">
+            <param name="id" type="url" description="Id of the payment account." default="1234"></param>
+             <param name="processor" type="string" description="Name of account to destroy" default="Dwolla" required="true"></param>
+          </endpoint>
+
+          <endpoint ep-url="/donors/payment_accounts/:id/donate.json" ep-method="post" ep-format="json" 
+            ep-description="Donate using payment account">
+            <param name="id" type="url" description="Id of the payment account." default="1234"></param>
+             <param name="amount" type="integer" description="Amount to donate." default="20" required="true"></param>
+             <param name="charity_group_id" type="integer" description="Id of charity group to make donation to." default="13" required="true"></param>
+          </endpoint>
+
+          <h2 class="docs__title">SESSION MANAGEMENT</h2>
+
+          <endpoint ep-url="/sessions/create.json" ep-method="post" ep-format="json"
+            ep-description="Create a user session.">
+            <param name="email" type="string" description="The email of the user you wish to authenticate." default="demo@example.com"></param>
+            <param name="password" type="string" description="The password used to authenticate the user." default="Super@!rdUnguess#!@Passw*rd"></param>
+          </endpoint>
+
+          <endpoint ep-url="/sessions/destroy.json " ep-method="post" ep-format="json" 
+            ep-description="Sign out destroy token">
+          </endpoint>
+
+          <endpoint ep-url="/donors/payment_accounts.json" ep-method="get" ep-format="json" 
+            ep-description="Create a new donor.">
+          </endpoint>
+
+      </api-docs>
+
+    </div>
+
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/modules.js -->
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/directives/endpoint.js"></script>
+        <script src="scripts/directives/param.js"></script>
+        <script src="scripts/directives/apiDocs.js"></script>
+        <script src="scripts/filters/upperCase.js"></script>
+        <script src="scripts/services/globalData.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
