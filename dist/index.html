@@ -24,45 +24,48 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="" ng-controller="MainCtrl">
+    <div class="">
       <api-docs docs-url="www.giv2giv.org/api" docs-ssl="true" docs-description="Live docs for the Giv2Giv API.">
           
           <h2 class="docs__title">DONOR MANAGEMENT</h2>
           <endpoint ep-url="/donors.json" ep-method="post" ep-format="json" ep-description="Create a new donor.">
+            
             <param name="email" type="string" description="The email of the user you wish to authenticate." default="demo@example.com" required="true">
+            
             <param name="password" type="string" description="The password used to authenticate the user." default="Super@!rdUnguess#!@Passw*rd" required="true">
+            
             <param name="name" type="string" description="The username for this user" default="John" required="true">
+         
           </endpoint>
 
-          <endpoint ep-url="/donors.json" ep-method="get" ep-format="json" ep-description="Show donor info">
+          <endpoint ep-url="/donors.json" ep-method="get" ep-format="json" ep-description="Show donor info" ep-auth="true">
           </endpoint>
 
-          <endpoint ep-url="/donors.json" ep-method="put" ep-format="json" ep-description="Create a new donor.">
+          <endpoint ep-url="/donors.json" ep-method="put" ep-format="json" ep-description="Create a new donor." ep-auth="true">
             <param name="name" type="string" description="The username for this user" default="John" required="true">
           </endpoint>
 
           <h2 class="docs__title">PAYMENT ACCOUNT MANAGEMENT</h2>
 
-          <endpoint ep-url="/donors/payment_accounts.json" ep-method="post" ep-format="json" ep-description="Create a new donor.">
+          <endpoint ep-url="/donors/payment_accounts.json" ep-method="post" ep-format="json" ep-description="Create a new donor." ep-auth="true">
             <param name="processor" type="string" description="Name of payment processor" default="Dwolla" required="true">
             <param name="token" type="string" description="Payment token." default="1asdf23" required="true">
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="get" ep-format="json" ep-description="Show specific payment account">
-            <param name="id" type="url" description="Id of the payment account." default="1234">
+          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="get" ep-format="json" ep-description="Show specific payment account" ep-auth="true">
           </endpoint>
 
-           <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="put" ep-format="json" ep-description="Show specific payment account">
+           <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="put" ep-format="json" ep-description="Show specific payment account" ep-auth="true">
             <param name="id" type="url" description="Id of the payment account." default="1234">
              <param name="processor" type="string" description="Name of payment processor" default="Dwolla" required="true">
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="delete" ep-format="json" ep-description="Destroy payment account">
+          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="delete" ep-format="json" ep-description="Destroy payment account" ep-auth="true">
             <param name="id" type="url" description="Id of the payment account." default="1234">
              <param name="processor" type="string" description="Name of account to destroy" default="Dwolla" required="true">
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id/donate.json" ep-method="post" ep-format="json" ep-description="Donate using payment account">
+          <endpoint ep-url="/donors/payment_accounts/:id/donate.json" ep-method="post" ep-format="json" ep-description="Donate using payment account" ep-auth="true">
             <param name="id" type="url" description="Id of the payment account." default="1234">
              <param name="amount" type="integer" description="Amount to donate." default="20" required="true">
              <param name="charity_group_id" type="integer" description="Id of charity group to make donation to." default="13" required="true">
@@ -75,10 +78,10 @@
             <param name="password" type="string" description="The password used to authenticate the user." default="Super@!rdUnguess#!@Passw*rd">
           </endpoint>
 
-          <endpoint ep-url="/sessions/destroy.json " ep-method="post" ep-format="json" ep-description="Sign out destroy token">
+          <endpoint ep-url="/sessions/destroy.json " ep-method="post" ep-format="json" ep-description="Sign out destroy token" ep-auth="true">
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts.json" ep-method="get" ep-format="json" ep-description="Create a new donor.">
+          <endpoint ep-url="/donors/payment_accounts.json" ep-method="get" ep-format="json" ep-description="Create a new donor." ep-auth="true">
           </endpoint>
 
       </api-docs>
@@ -92,6 +95,6 @@
 
         <script src="scripts/25e920e4.modules.js"></script>
 
-        <script src="scripts/6660e947.scripts.js"></script>
+        <script src="scripts/2f3ebb65.scripts.js"></script>
 </body>
 </html>

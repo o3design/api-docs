@@ -1,17 +1,22 @@
 'use strict';
 
 angular.module('docs.giv2giv.orgApp')
-  .controller('MainCtrl', function($scope, globalData, $element, $http){
+  .controller('MainCtrl', function($scope, $element, $http){
+
+  	console.log($scope);
   	$scope.urlParam = {id: 123};
 
-  	$scope.docsUrl = "www.giv2giv.org/api";
-  	$scope.docsSsl = "true";
+
+
+  	$scope.epDomain = "www.giv2giv.org/api";
+  
+
   	$scope.authToken = "agrSxvOLWjecr3ouMvxRJQ";
 
-  	console.log($scope);	
+  		
 
 	$scope.submit = function(){
-
+		console.log($scope);
 		var formData = $element.find('form').serializeArray();
 
 		var requestObj = {}
@@ -30,7 +35,7 @@ angular.module('docs.giv2giv.orgApp')
 			httpProtocol = "http://"
 		}
 
-		$scope.requestUrl = httpProtocol + $scope.docsUrl + $scope.epUrl;
+		$scope.requestUrl = httpProtocol + $scope.epDomain + $scope.epUrl;
 
 
 		$http({method: $scope.epMethod.toUpperCase(), 
