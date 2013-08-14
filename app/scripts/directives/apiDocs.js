@@ -3,7 +3,7 @@
 angular.module('docs.giv2giv.orgApp')
   .directive('apiDocs', function () {
     return {
-      scope:{ docsUrl: "@", docsSsl: "@", docsDescription: "@"},
+      scope:{ docsUrl: "@url", docsSsl: "@ssl", docsDescription: "@desc" },
       transclude: true,
       template: '<div>'
       				+'<h1>{{docsUrl}}</h1>'
@@ -13,11 +13,17 @@ angular.module('docs.giv2giv.orgApp')
       				+'<div ng-transclude></div>'
       			+'</div>',
       restrict: 'E',
-      controller: function($scope){
+      controller: function($scope, $rootScope){
         this.data = $scope;
+
+
+        $rootScope.$on("ParamUrl.Updated", function(event, value){
+          $rootScope.param = value;
+        });
+
+        
       },
       link: function postLink(scope, elm, attrs) {
-        
       }
     };
   });

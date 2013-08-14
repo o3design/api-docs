@@ -45,9 +45,13 @@ angular.module('docs.giv2giv.orgApp')
       },
       controller: function($scope, $element, $http){
 
+
 		$scope.submit = function(){
 
-			console.log($scope);
+			//console.log($scope);
+
+			//TODO if proxy is defined use that url instead of the docsUrl
+
 			$scope.epDomain = $scope.data.docsUrl;
 
 			$scope.authToken = $scope.data.authToken;
@@ -74,22 +78,17 @@ angular.module('docs.giv2giv.orgApp')
 
 			$scope.requestUrl = httpProtocol + $scope.epDomain + $scope.epUrl;
 
-			var httpObj = {}
+			var httpObj = {
+				method: $scope.epMethod.toUpperCase(), 
+				url:  $scope.requestUrl, 
+				data: $scope.request
+			}
 
 			if($scope.epAuth == "true"){
-				httpObj = {
-					method: $scope.epMethod.toUpperCase(), 
-					url:  $scope.requestUrl, 
-					data: $scope.request,
-					headers: {'Authorization': 'Token token=' + $scope.authToken}
-				}
-			}else{
-				httpObj = {
-					method: $scope.epMethod.toUpperCase(), 
-					url:  $scope.requestUrl, 
-					data: $scope.request
-				}
+
+				httpObj["headers"] =  {'Authorization': 'Token token=' + $scope.authToken}	
 			}
+
 
 			$http(httpObj)
 			.success(function(data, status, headers, config){
@@ -98,9 +97,6 @@ angular.module('docs.giv2giv.orgApp')
 				$scope.responseClass = "endpoint__response-code--success";
 			})
 			.error(function(data, status, headers, config){
-				console.log(data);
-				console.log(config);
-				console.log(status);
 				$scope.response = data;
 				$scope.responseCode = status;
 				$scope.responseClass = "endpoint__response-code--error";

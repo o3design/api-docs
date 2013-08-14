@@ -27,9 +27,10 @@
 
     <!-- Add your site or application content here -->
     <div class="">
-      <api-docs docs-url="www.giv2giv.org/api" docs-ssl="true" docs-description="Live docs for the Giv2Giv API.">
+      <api-docs url="www.giv2giv.org/api" proxy="" ssl="true" desc="Live docs for the Giv2Giv API.">
           
           <h2 class="docs__title">DONOR MANAGEMENT</h2>
+
           <endpoint ep-url="/donors.json" 
                     ep-method="post" 
                     ep-format="json"
@@ -64,23 +65,24 @@
             <param name="token" type="string" description="Payment token." default="1asdf23" required="true"></param>
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="get" ep-format="json" 
+          <endpoint ep-url="/donors/payment_accounts/{{param.account_id}}.json" ep-method="get" ep-format="json" 
             ep-description="Show specific payment account" ep-auth="true">
+            <param name="account_id" type="url" description="Id of the payment account." default="1234"></param>
           </endpoint>
 
-           <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="put" ep-format="json" 
+           <endpoint ep-url="/donors/payment_accounts/{{param.account_id}}.json" ep-method="put" ep-format="json" 
             ep-description="Show specific payment account" ep-auth="true">
-            <param name="id" type="url" description="Id of the payment account." default="1234"></param>
+            <param name="account_id" type="url" description="Id of the payment account." default="1234"></param>
              <param name="processor" type="string" description="Name of payment processor" default="Dwolla" required="true"></param>
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id.json" ep-method="delete" ep-format="json" 
+          <endpoint ep-url="/donors/payment_accounts/{{param.id}}.json" ep-method="delete" ep-format="json" 
             ep-description="Destroy payment account" ep-auth="true">
             <param name="id" type="url" description="Id of the payment account." default="1234"></param>
              <param name="processor" type="string" description="Name of account to destroy" default="Dwolla" required="true"></param>
           </endpoint>
 
-          <endpoint ep-url="/donors/payment_accounts/:id/donate.json" ep-method="post" ep-format="json" 
+          <endpoint ep-url="/donors/payment_accounts/{{param.id}}/donate.json" ep-method="post" ep-format="json" 
             ep-description="Donate using payment account" ep-auth="true">
             <param name="id" type="url" description="Id of the payment account." default="1234"></param>
              <param name="amount" type="integer" description="Amount to donate." default="20" required="true"></param>
@@ -138,7 +140,6 @@
         <script src="scripts/directives/param.js"></script>
         <script src="scripts/directives/apiDocs.js"></script>
         <script src="scripts/filters/upperCase.js"></script>
-        <script src="scripts/services/globalData.js"></script>
         <!-- endbuild -->
 </body>
 </html>
