@@ -25,7 +25,7 @@ angular.module('docs.giv2giv.orgApp')
         $scope.param = {};
         $scope.$watch("param" ,function(value){
           //console.log(value);
-          $rootScope.$broadcast( 'ParamUrl.Updated', value );
+          $rootScope.$broadcast('ParamUrl.Updated', value);
         }, true);
       },
       link: function postLink(scope, iElement, iAttrs) {

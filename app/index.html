@@ -42,9 +42,17 @@
                     default="demo@example.com" 
                     required="true"></param>
             
-            <param name="password" type="string" description="The password used to authenticate the user." default="Super@!rdUnguess#!@Passw*rd" required="true"></param>
+            <param name="password" 
+                    type="string" 
+                    description="The password used to authenticate the user." 
+                    default="Super@!rdUnguess#!@Passw*rd" 
+                    required="true"></param>
             
-            <param name="name" type="string" description="The username for this user" default="John" required="true"></param>
+            <param name="name" 
+                    type="string" 
+                    description="The username for this user" 
+                    default="John" 
+                    required="true"></param>
          
           </endpoint>
 
@@ -55,6 +63,64 @@
           <endpoint ep-url="/donors.json" ep-method="put" ep-format="json"
             ep-description="Create a new donor." ep-auth="true">
             <param name="name" type="string" description="The username for this user" default="John" required="true"></param>
+          </endpoint>
+
+          <h2 class="docs__title">CHARITY GROUP MANAGEMENT</h2>
+
+          <endpoint ep-url="/charity_group/{{param.charity_id}}/add_charity.json"
+                    ep-method="post" 
+                    ep-format="json"
+                    ep-description="Create a new charity group to this group.">
+
+            <param name="charity_id" 
+                    type="url" 
+                    description="Id of the charity group account." 
+                    default="1234"></param>
+            
+            <param name="name" 
+                    type="string" 
+                    description="The name for this charity group" 
+                    default="Giv2Giv" 
+                    required="true"></param>
+         
+          </endpoint>
+
+          <endpoint ep-url="/charity_group.json"
+                    ep-method="get" 
+                    ep-format="json"
+                    ep-description="Get a list of charity groups.">
+         
+          </endpoint>
+
+          <endpoint ep-url="/charity_group.json"
+                    ep-method="post" 
+                    ep-format="json"
+                    ep-description="Create a new charity group.">
+         
+          </endpoint>
+
+          <endpoint ep-url="/charity_group/{{param.charity_id}}.json"
+                    ep-method="get" 
+                    ep-format="json"
+                    ep-description="Get the details of this charity group.">
+
+            <param name="charity_id" 
+                    type="url" 
+                    description="Id of the charity group account." 
+                    default="1234"></param>
+         
+          </endpoint>
+
+          <endpoint ep-url="/charity_group/{{param.charity_id}}.json"
+                    ep-method="put" 
+                    ep-format="json"
+                    ep-description="Update the details of this charity group.">
+                    
+            <param name="charity_id" 
+                    type="url" 
+                    description="Id of the charity group account." 
+                    default="1234"></param>
+         
           </endpoint>
 
           <h2 class="docs__title">PAYMENT ACCOUNT MANAGEMENT</h2>
