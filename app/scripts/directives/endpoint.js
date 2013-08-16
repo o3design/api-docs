@@ -30,11 +30,11 @@ angular.module('docs.giv2giv.orgApp')
       restrict: 'E',
       transclude: true,
       scope: {
-      	epUrl: "@",
-      	epMethod: "@",
-      	epDescription: "@",
-      	epFormat: "@",
-      	epAuth: "@",
+      	epUrl: "@url",
+      	epMethod: "@method",
+      	epDescription: "@description",
+      	epFormat: "@format",
+      	epAuth: "@auth",
       	request: "@",
       	response: "@",
       	responseCode: "@"
