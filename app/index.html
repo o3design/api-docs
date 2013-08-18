@@ -9,11 +9,16 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css({.tmp,app}) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+
+  <link href="http://giv2giv.org/stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://giv2giv.org/stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://giv2giv.org/stylesheets/fonts.css" media="screen" rel="stylesheet" type="text/css" />
 </head>
   <body ng-app="docs.giv2giv.orgApp">
     <!--[if lt IE 7]>
@@ -24,12 +29,51 @@
       <script src="bower_components/es5-shim/es5-shim.js"></script>
       <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
+    <div style="height:50px; width:100%;"></div>
     <!-- Add your site or application content here -->
+    <header class="pull-center" id="masthead">
+    <nav class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <img src="http://giv2giv.org/images/giv2giv-org.png" width="20%"/>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
     <div class="">
+
       <api-docs url="www.giv2giv.org/api" proxy="" ssl="true" desc="Live docs for the Giv2Giv API.">
+
           
-          <h2 class="docs__title">DONOR MANAGEMENT</h2>
+          
+          <h1 class="page-header">SESSION MANAGEMENT</h1>
+
+          <endpoint url="/sessions/create.json" 
+                    method="post" 
+                    format="json"
+                    description="Create a user session.">
+
+            <param name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+
+            <param name="password" 
+                    type="string" 
+                    description="The password used to authenticate the user."
+                    default="Super@!rdUnguess#!@Passw*rd"/>
+          </endpoint>
+
+          <endpoint url="/sessions/destroy.json "
+                    method="post"
+                    format="json" 
+                    description="Sign out destroy token"
+                    auth="true">
+          </endpoint>
+          
+          <h1 class="page-header">DONOR MANAGEMENT</h1>
 
           <endpoint url="/donors.json" 
                     method="post" 
@@ -66,7 +110,7 @@
           <endpoint url="/donors.json"
                     method="put" 
                     format="json"
-                    description="Create a new donor." 
+                    description="Update donor info" 
                     auth="true">
 
             <param name="name" 
@@ -78,7 +122,7 @@
           </endpoint>
 
 
-          <h2 class="docs__title">CHARITY MANAGEMENT</h2>
+          <h1 class="page-header">CHARITY MANAGEMENT</h1>
 
           <endpoint url="/charity.json"
                     method="get" 
@@ -99,7 +143,7 @@
                     default="1234"/>
           </endpoint>
 
-          <h2 class="docs__title">CHARITY GROUP MANAGEMENT</h2>
+          <h1 class="page-header">CHARITY GROUP MANAGEMENT</h1>
 
           <endpoint url="/charity_group/{{param.charity_id}}/add_charity.json"
                     method="post" 
@@ -136,7 +180,7 @@
           <endpoint url="/charity_group/{{param.charity_id}}.json"
                     method="get" 
                     format="json"
-                    description="Get the details of this charity group.">
+                    description="Get the details of a specific charity group.">
 
             <param name="charity_id" 
                     type="url" 
@@ -148,8 +192,29 @@
           <endpoint url="/charity_group/{{param.charity_id}}.json"
                     method="put" 
                     format="json"
-                    description="Update the details of this charity group.">
-                    
+                    description="Update the details of a specific charity group.">
+  
+            <uri name="charity_id" 
+                    type="url" 
+                    description="Id of the charity group account." 
+                    default="1234"></uri>
+            <header name="charity_id" 
+                  type="integer" 
+                  description="Id of the charity group account." 
+                  default="1234"></header>
+            <query name="charity_id" 
+                  type="url" 
+                  description="Id of the charity group account." 
+                  default="1234"></query>
+            <post name="charity_id" 
+                  type="url" 
+                  description="Id of the charity group account." 
+                  default="1234"></post>
+            <json name="charity_id" 
+                  type="url" 
+                  description="Id of the charity group account." 
+                  default="1234"></json>
+
             <param name="charity_id" 
                     type="url" 
                     description="Id of the charity group account." 
@@ -157,7 +222,7 @@
          
           </endpoint>
 
-          <h2 class="docs__title">PAYMENT ACCOUNT MANAGEMENT</h2>
+          <h1 class="page-header">PAYMENT ACCOUNT MANAGEMENT</h1>
 
           <endpoint url="/donors/payment_accounts.json"
                     method="get"
@@ -185,7 +250,8 @@
                     required="true"/>
           </endpoint>
 
-          <endpoint url="/donors/payment_accounts/{{param.account_id}}.json"          method="get" 
+          <endpoint url="/donors/payment_accounts/{{param.account_id}}.json" 
+                    method="get" 
                     format="json" 
                     description="Show specific payment account" 
                     auth="true">
@@ -196,7 +262,8 @@
                    default="1234"/>
           </endpoint>
 
-           <endpoint url="/donors/payment_accounts/{{param.account_id}}.json"          method="put" 
+           <endpoint url="/donors/payment_accounts/{{param.account_id}}.json"          
+                     method="put" 
                      format="json" 
                      description="Show specific payment account" 
                      auth="true">
@@ -250,33 +317,9 @@
 
              <param name="charity_group_id"
                     type="integer"
-                    description="Id of charity group to make donation to." default="13" 
+                    description="Id of charity group to make donation to." 
+                    default="13" 
                     required="true"/>
-          </endpoint>
-
-          <h2 class="docs__title">SESSION MANAGEMENT</h2>
-
-          <endpoint url="/sessions/create.json" 
-                    method="post" 
-                    format="json"
-                    description="Create a user session.">
-
-            <param name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-
-            <param name="password" 
-                    type="string" 
-                    description="The password used to authenticate the user."
-                    default="Super@!rdUnguess#!@Passw*rd"/>
-          </endpoint>
-
-          <endpoint url="/sessions/destroy.json "
-                    method="post"
-                    format="json" 
-                    description="Sign out destroy token"
-                    auth="true">
           </endpoint>
 
       </api-docs>
@@ -314,6 +357,7 @@
         <script src="scripts/directives/param.js"></script>
         <script src="scripts/directives/apiDocs.js"></script>
         <script src="scripts/filters/upperCase.js"></script>
+        <script src="scripts/directives/authToken.js"></script>
         <!-- endbuild -->
 </body>
 </html>

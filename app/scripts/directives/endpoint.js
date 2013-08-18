@@ -7,6 +7,7 @@ angular.module('docs.giv2giv.orgApp')
 			+'<div class="endpoint__heading">'
 				+'<span class="endpoint__method">{{epMethod | upperCase}}</span>'
 				+'<span class="endpoint__url">{{epUrl}}</span>'
+				+'<auth-token/>'
 			+'</div>'
 			+'<form>'
 				+'<p class="endpoint_description">{{epDescription}}</p>'
@@ -43,8 +44,17 @@ angular.module('docs.giv2giv.orgApp')
       link: function postLink(scope, elm, attrs, apiDocsCtrl) {
       	scope.data = apiDocsCtrl.data;
       },
-      controller: function($scope, $element, $http){
+      controller: function($scope, $rootScope, $element, $http){
 
+      	// $scope.$watch("authToken" ,function(value){
+       //    //console.log(value);
+       //    $scope.$broadcast('authToken.updated', value);
+       //  });
+
+       //  $rootScope.$on('authToken.updated', function(value){
+       //  	console.log(value);
+       //  	$rootScope.authToken = value;
+       //  });
 
 		$scope.submit = function(){
 
@@ -54,7 +64,7 @@ angular.module('docs.giv2giv.orgApp')
 
 			$scope.epDomain = $scope.data.docsUrl;
 
-			$scope.authToken = $scope.data.authToken;
+			$scope.authToken = $('.authToken').val();
 
 			$scope.docsSsl = $scope.data.docsSsl;
 

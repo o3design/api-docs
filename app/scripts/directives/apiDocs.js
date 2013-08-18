@@ -6,22 +6,18 @@ angular.module('docs.giv2giv.orgApp')
       scope:{ docsUrl: "@url", docsSsl: "@ssl", docsDescription: "@desc" },
       transclude: true,
       template: '<div>'
-      				+'<h1>{{docsUrl}}</h1>'
-      				+'<p>{{docsDescription}}</p>'
-              +'<span>Access token:</span>'
-              +'<input type="text" ng-model="authToken"/>'
+      				+'<h1 class="page-header">{{docsUrl}}'
+      				+'<small>{{docsDescription}}</small></h1>'
       				+'<div ng-transclude></div>'
       			+'</div>',
       restrict: 'E',
       controller: function($scope, $rootScope){
         this.data = $scope;
 
-
         $rootScope.$on("ParamUrl.Updated", function(event, value){
           $rootScope.param = value;
         });
 
-        
       },
       link: function postLink(scope, elm, attrs) {
       }

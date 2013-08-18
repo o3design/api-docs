@@ -3,7 +3,7 @@
 angular.module('docs.giv2giv.orgApp')
   .directive('param', function () {
     return {
-      template: '<div class="endpoint__param">'
+      template: '<div class="endpoint__param" ng-init="param[name] = default">'
       	      		+'<label class="endpoint__param-label">{{name}}:</label>'
                   //+'<input type="text" ng-model="url" class="endpoint__param-input"/>'
                   +'<ng-switch on="type">'
@@ -29,10 +29,10 @@ angular.module('docs.giv2giv.orgApp')
         }, true);
       },
       link: function postLink(scope, iElement, iAttrs) {
-        if(iAttrs.type == "url"){
-          scope.param = {"id": 1234};
-          console.log(scope.default);
-        }
+        // if(iAttrs.type == "url"){
+        //   scope.param = scope.param;
+        //   console.log(scope.default);
+        // }
       }
     };
   });
