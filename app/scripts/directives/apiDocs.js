@@ -16,6 +16,11 @@ angular.module('docs.giv2giv.orgApp')
 
         $rootScope.$on("ParamUrl.Updated", function(event, value){
           $rootScope.param = value;
+          
+          for(var key in value){
+            $("." + key).val(value[key]);
+          }
+         
         });
 
       },

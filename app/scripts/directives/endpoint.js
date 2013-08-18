@@ -46,16 +46,6 @@ angular.module('docs.giv2giv.orgApp')
       },
       controller: function($scope, $rootScope, $element, $http){
 
-      	// $scope.$watch("authToken" ,function(value){
-       //    //console.log(value);
-       //    $scope.$broadcast('authToken.updated', value);
-       //  });
-
-       //  $rootScope.$on('authToken.updated', function(value){
-       //  	console.log(value);
-       //  	$rootScope.authToken = value;
-       //  });
-
 		$scope.submit = function(){
 
 			//console.log($scope);
