@@ -10,7 +10,6 @@ angular.module('docs.giv2giv.orgApp')
 
       	scope.$watch("authToken", function(value){
       		$('.authToken').val(value);
-
       	});
       }
     };

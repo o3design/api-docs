@@ -20,12 +20,12 @@ angular.module('docs.giv2giv.orgApp')
 			+'</div>'
 			+'<div class="endpoint__request" ng-show="request">'
 				+'<span>Request</span>'
-				+'<pre>{{request}}</pre>'
+				+'<pre>{{request | json}}</pre>'
 			+'</div>'
 			+'<div class="endpoint__response" ng-show="response">'
 				+'<span>Response</span>'
 				+'<span class="endpoint__response-code" ng-class="responseClass">{{responseCode}}</span>'
-				+'<pre>{{response}}</pre>'
+				+'<pre>{{response | json}}</pre>'
 			+'</div>'
 		+'</div>',
       restrict: 'E',
@@ -48,7 +48,6 @@ angular.module('docs.giv2giv.orgApp')
 
 		$scope.submit = function(){
 
-			//console.log($scope);
 
 			//TODO if proxy is defined use that url instead of the docsUrl
 
@@ -66,7 +65,7 @@ angular.module('docs.giv2giv.orgApp')
 				requestObj[v.name] = v.value;
 			});
 
-			$scope.request = JSON.stringify(requestObj);
+			$scope.request = requestObj;
 
 			var httpProtocol = "";
 

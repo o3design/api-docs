@@ -10,7 +10,7 @@ angular.module('docs.giv2giv.orgApp')
                     +'<input ng-switch-when="url" type="text" ng-model="$parent.param[name]" class="{{name}} endpoint__param-input"/>'
       	      	  	+'<input ng-switch-default type="text" name="{{name}}" value="{{default}}" class="endpoint__param-input"/>'
                   +'</ng-switch>'
-      	      		+'<span class="endpoint__param-type">{{type}}</span>'
+      	      		+'<span class="endpoint__param-type">{{type}}:</span>'
       	      		+'<span>{{description}}</span>'	      		
           			+'</div>',
       restrict: 'E',
@@ -32,7 +32,7 @@ angular.module('docs.giv2giv.orgApp')
 
           if(propCount == 1){
               value[$scope.name] = $scope.default;
-              console.log(value);
+             // console.log(value);
           }
           
  

@@ -12,7 +12,7 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="styles/637d2e03.main.css">
+        <link rel="stylesheet" href="styles/f09527e8.main.css">
 
   <link href="http://giv2giv.org/stylesheets/font-awesome.css" media="screen" rel="stylesheet" type="text/css">
   <link href="http://giv2giv.org/stylesheets/theme.css" media="screen" rel="stylesheet" type="text/css">
@@ -35,7 +35,6 @@
         <div class="container">
 
           <img src="http://giv2giv.org/images/giv2giv-org.png" width="20%">
-          <!-- <span style="font-size:3em; margin-left:10px;">API DOCS</span> -->
         </div>
       </div>
     </nav>
@@ -48,26 +47,26 @@
 
           
           
-          <h1 class="page-header">SESSION MANAGEMENT</h1>
+          <h3 class="white-text-shadow">SESSION MANAGEMENT</h3>
 
           <endpoint url="/sessions/create.json" method="post" format="json" description="Create a user session">
 
-<!--             <header name="email" 
+<!--        <header name="email" 
                     type="string" 
                     description="The email of the user you wish to authenticate."
-                    default="demo@example.com"></header>
+                    default="demo@example.com"/>
             <query name="email" 
                     type="string" 
                     description="The email of the user you wish to authenticate."
-                    default="demo@example.com"></query>
+                    default="demo@example.com"/>
             <post name="email" 
                     type="string" 
                     description="The email of the user you wish to authenticate."
-                    default="demo@example.com"></post>
+                    default="demo@example.com"/>
             <json name="email" 
                     type="string" 
                     description="The email of the user you wish to authenticate."
-                    default="demo@example.com"></json> -->
+                    default="demo@example.com"/> -->
 
             <param name="email" type="string" description="The email of the user you wish to authenticate" default="demo@example.com">
 
@@ -77,7 +76,7 @@
           <endpoint url="/sessions/destroy.json " method="post" format="json" description="Sign out destroy token" auth="true">
           </endpoint>
           
-          <h1 class="page-header">DONOR MANAGEMENT</h1>
+          <h3 class="white-text-shadow">DONOR MANAGEMENT</h3>
 
           <endpoint url="/donors.json" method="post" format="json" description="Create a new donor.">
             
@@ -99,7 +98,7 @@
           </endpoint>
 
 
-          <h1 class="page-header">CHARITY MANAGEMENT</h1>
+          <h3 class="white-text-shadow">CHARITY MANAGEMENT</h3>
 
           <endpoint url="/charity.json" method="get" format="json" description="Get a list of charities." auth="true">
           </endpoint>
@@ -109,7 +108,7 @@
             <param name="charity_id" type="url" description="Id of the charity account." default="1234">
           </endpoint>
 
-          <h1 class="page-header">CHARITY GROUP MANAGEMENT</h1>
+          <h3 class="white-text-shadow">CHARITY GROUP MANAGEMENT</h3>
 
           <endpoint url="/charity_group/{{param.charity_id}}/add_charity.json" method="post" format="json" description="Create a new charity group to this group">
 
@@ -160,7 +159,7 @@
          
           </endpoint>
 
-          <h1 class="page-header">PAYMENT ACCOUNT MANAGEMENT</h1>
+          <h3 class="white-text-shadow">PAYMENT ACCOUNT MANAGEMENT</h3>
 
           <endpoint url="/donors/payment_accounts.json" method="get" format="json" description="Get donor accounts." auth="true">
           </endpoint>
@@ -211,6 +210,6 @@
 
         <script src="scripts/25e920e4.modules.js"></script>
 
-        <script src="scripts/2de21111.scripts.js"></script>
+        <script src="scripts/be00c808.scripts.js"></script>
 </body>
 </html>
