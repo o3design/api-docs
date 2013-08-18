@@ -31,11 +31,13 @@
     <![endif]-->
     <div style="height:50px; width:100%;"></div>
     <!-- Add your site or application content here -->
-    <header class="pull-center" id="masthead">
+    <header class="" id="masthead">
     <nav class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
+
           <img src="http://giv2giv.org/images/giv2giv-org.png" width="20%"/>
+          <!-- <span style="font-size:3em; margin-left:10px;">API DOCS</span> -->
         </div>
       </div>
     </nav>
@@ -53,16 +55,33 @@
           <endpoint url="/sessions/create.json" 
                     method="post" 
                     format="json"
-                    description="Create a user session.">
+                    description="Create a user session">
+
+<!--             <header name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"></header>
+            <query name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"></query>
+            <post name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"></post>
+            <json name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"></json> -->
 
             <param name="email" 
                     type="string" 
-                    description="The email of the user you wish to authenticate."
+                    description="The email of the user you wish to authenticate"
                     default="demo@example.com"/>
 
             <param name="password" 
                     type="string" 
-                    description="The password used to authenticate the user."
+                    description="The password used to authenticate the user"
                     default="Super@!rdUnguess#!@Passw*rd"/>
           </endpoint>
 
@@ -82,13 +101,13 @@
             
             <param name="email" 
                     type="string"
-                    description="The email of the user you wish to authenticate."
+                    description="The email of the user you wish to authenticate"
                     default="demo@example.com" 
                     required="true"></param>
             
             <param name="password" 
                     type="string" 
-                    description="The password used to authenticate the user." 
+                    description="The password used to authenticate the user" 
                     default="Super@!rdUnguess#!@Passw*rd" 
                     required="true"></param>
             
@@ -134,7 +153,7 @@
           <endpoint url="/charity/{{param.charity_id}}.json"
                     method="get" 
                     format="json"
-                    description="Get info on a specific charity."
+                    description="Get info on a specific charity"
                     auth="true">
 
             <param name="charity_id" 
@@ -148,11 +167,11 @@
           <endpoint url="/charity_group/{{param.charity_id}}/add_charity.json"
                     method="post" 
                     format="json"
-                    description="Create a new charity group to this group.">
+                    description="Create a new charity group to this group">
 
             <param name="charity_id" 
                     type="url" 
-                    description="Id of the charity group account." 
+                    description="Id of the charity group account" 
                     default="1234"></param>
             
             <param name="name" 
@@ -166,25 +185,25 @@
           <endpoint url="/charity_group.json"
                     method="get" 
                     format="json"
-                    description="Get a list of charity groups.">
+                    description="Get a list of charity groups">
          
           </endpoint>
 
           <endpoint url="/charity_group.json"
                     method="post" 
                     format="json"
-                    description="Create a new charity group.">
+                    description="Create a new charity group">
          
           </endpoint>
 
           <endpoint url="/charity_group/{{param.charity_id}}.json"
                     method="get" 
                     format="json"
-                    description="Get the details of a specific charity group.">
+                    description="Get the details of a specific charity group">
 
             <param name="charity_id" 
                     type="url" 
-                    description="Id of the charity group account." 
+                    description="Id of the charity group account" 
                     default="1234"></param>
          
           </endpoint>
@@ -192,19 +211,19 @@
           <endpoint url="/charity_group/{{param.charity_id}}.json"
                     method="put" 
                     format="json"
-                    description="Update the details of a specific charity group.">
+                    description="Update the details of a specific charity group">
   
-            <uri name="charity_id" 
+            <!-- <uri name="charity_id" 
                     type="url" 
-                    description="Id of the charity group account." 
+                    description="Id of the charity group account" 
                     default="1234"></uri>
             <header name="charity_id" 
                   type="integer" 
-                  description="Id of the charity group account." 
+                  description="Id of the charity group account" 
                   default="1234"></header>
             <query name="charity_id" 
                   type="url" 
-                  description="Id of the charity group account." 
+                  description="Id of the charity group account" 
                   default="1234"></query>
             <post name="charity_id" 
                   type="url" 
@@ -213,7 +232,7 @@
             <json name="charity_id" 
                   type="url" 
                   description="Id of the charity group account." 
-                  default="1234"></json>
+                  default="1234"></json> -->
 
             <param name="charity_id" 
                     type="url" 

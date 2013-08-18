@@ -9,12 +9,9 @@ angular.module('docs.giv2giv.orgApp')
       link: function postLink(scope, element, attrs) {
 
       	scope.$watch("authToken", function(value){
-      		console.log($('.authToken'));
-
       		$('.authToken').val(value);
 
-      	});	
-       
+      	});
       }
     };
   });
