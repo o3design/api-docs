@@ -45,7 +45,7 @@
 
     <div class="">
 
-      <api-docs url="www.giv2giv.org/api" proxy="" ssl="true" desc="Live docs for the Giv2Giv API.">
+      <api-docs url="www.giv2giv.org/api" proxy="" ssl="true" desc="Live docs for the Giv2Giv API">
 
           
           
@@ -149,13 +149,13 @@
                     auth="true">
           </endpoint>
 
-          <endpoint url="/charity/{{param.charity_id}}.json"
+          <endpoint url="/charity/{{param.id}}.json"
                     method="get" 
                     format="json"
                     description="Get info on a specific charity"
                     auth="true">
 
-            <param name="charity_id" 
+            <param name="id" 
                     type="url" 
                     description="Id of the charity account." 
                     default="1234"/>
@@ -163,12 +163,12 @@
 
           <h3 class="white-text-shadow">CHARITY GROUP MANAGEMENT</h3>
 
-          <endpoint url="/charity_group/{{param.charity_id}}/add_charity.json"
+          <endpoint url="/charity_group/{{param.id}}/add_charity.json"
                     method="post" 
                     format="json"
                     description="Create a new charity group to this group">
 
-            <param name="charity_id" 
+            <param name="id" 
                     type="url" 
                     description="Id of the charity group account" 
                     default="1234"></param>
@@ -195,19 +195,19 @@
          
           </endpoint>
 
-          <endpoint url="/charity_group/{{param.charity_id}}.json"
+          <endpoint url="/charity_group/{{param.id}}.json"
                     method="get" 
                     format="json"
                     description="Get the details of a specific charity group">
 
-            <param name="charity_id" 
+            <param name="id" 
                     type="url" 
                     description="Id of the charity group account" 
                     default="1234"></param>
          
           </endpoint>
 
-          <endpoint url="/charity_group/{{param.charity_id}}.json"
+          <endpoint url="/charity_group/{{param.id}}.json"
                     method="put" 
                     format="json"
                     description="Update the details of a specific charity group">
@@ -233,7 +233,7 @@
                   description="Id of the charity group account." 
                   default="1234"></json> -->
 
-            <param name="charity_id" 
+            <param name="id" 
                     type="url" 
                     description="Id of the charity group account." 
                     default="1234"></param>
@@ -268,25 +268,25 @@
                     required="true"/>
           </endpoint>
 
-          <endpoint url="/donors/payment_accounts/{{param.account_id}}.json" 
+          <endpoint url="/donors/payment_accounts/{{param.id}}.json" 
                     method="get" 
                     format="json" 
                     description="Show specific payment account" 
                     auth="true">
 
-            <param name="account_id" 
+            <param name="id" 
                    type="url" 
                    description="Id of the payment account." 
                    default="1234"/>
           </endpoint>
 
-           <endpoint url="/donors/payment_accounts/{{param.account_id}}.json"          
+           <endpoint url="/donors/payment_accounts/{{param.id}}.json"          
                      method="put" 
                      format="json" 
-                     description="Show specific payment account" 
+                     description="Update a specific payment account" 
                      auth="true">
 
-             <param name="account_id" 
+             <param name="id" 
                     type="url" 
                     description="Id of the payment account." 
                     default="1234"/>

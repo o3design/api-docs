@@ -11,10 +11,11 @@ angular.module('docs.giv2giv.orgApp')
       				+'<div ng-transclude></div>'
       			+'</div>',
       restrict: 'E',
-      controller: function($scope, $rootScope){
+      controller: function($scope, $q, $timeout, $rootScope){
         this.data = $scope;
 
         $rootScope.$on("ParamUrl.Updated", function(event, value){
+          console.log(value);
           $rootScope.param = value;
           
           for(var key in value){
@@ -25,6 +26,7 @@ angular.module('docs.giv2giv.orgApp')
 
       },
       link: function postLink(scope, elm, attrs) {
+
       }
     };
   });

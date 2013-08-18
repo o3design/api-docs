@@ -43,11 +43,11 @@ angular.module('docs.giv2giv.orgApp')
       require: "^apiDocs",
       link: function postLink(scope, elm, attrs, apiDocsCtrl) {
       	scope.data = apiDocsCtrl.data;
+      	
       },
       controller: function($scope, $rootScope, $element, $http){
 
 		$scope.submit = function(){
-
 
 			//TODO if proxy is defined use that url instead of the docsUrl
 
