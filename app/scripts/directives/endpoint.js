@@ -14,7 +14,7 @@ angular.module('docs.giv2giv.orgApp')
 				+'<div class="endpoint__params" ng-transclude></div>'
 				+'<button class="btn" ng-click="submit()">Try it</button>'
 			+'</form>'
-			+'<div class="endpoint__url" ng-show="request">'
+			+'<div class="endpoint__request-url" ng-show="request">'
 				+'<span class="endpoint__url-label">Request url:</span>'
 				+'<span>{{requestUrl}}</span>'
 			+'</div>'
