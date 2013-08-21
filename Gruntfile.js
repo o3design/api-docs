@@ -27,6 +27,11 @@ module.exports = function (grunt) {
   } catch (e) {}
 
   grunt.initConfig({
+    shell: {
+      pushGhPages: {
+        command: 'git subtree push --prefix dist origin gh-pages'
+      }
+    },
     yeoman: yeomanConfig,
     watch: {
       coffee: {
@@ -355,5 +360,10 @@ module.exports = function (grunt) {
     'jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('gh-pages', [
+    'build',
+    'shell'
   ]);
 };
