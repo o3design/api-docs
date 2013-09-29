@@ -51,23 +51,6 @@
 
           <endpoint url="/sessions/create.json" method="post" format="json" description="Create a user session">
 
-<!--        <header name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <query name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <post name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <json name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/> -->
-
             <param name="email" type="string" description="The email of the user you wish to authenticate" default="demo@example.com">
 
             <param name="password" type="string" description="The password used to authenticate the user" default="Super@!rdUnguess#!@Passw*rd">
@@ -100,17 +83,17 @@
 
           <h3 class="white-text-shadow">CHARITY MANAGEMENT</h3>
 
-          <endpoint url="/charity.json" method="get" format="json" description="Get a list of charities." auth="true">
+          <endpoint url="/charity.json" method="get" format="json" description="Get a list of charities.">
           </endpoint>
 
-          <endpoint url="/charity/{{param.id}}.json" method="get" format="json" description="Get info on a specific charity" auth="true">
+          <endpoint url="/charity/{{param.id}}.json" method="get" format="json" description="Get info on a specific charity">
 
             <param name="id" type="url" description="Id of the charity account." default="1234">
           </endpoint>
 
           <h3 class="white-text-shadow">CHARITY GROUP MANAGEMENT</h3>
 
-          <endpoint url="/charity_group/{{param.id}}/add_charity.json" method="post" format="json" description="Add a new charity to charity group">
+          <endpoint url="/charity_group/{{param.id}}/add_charity.json" method="post" format="json" description="Add a new charity to charity group" auth="true">
 
             <param name="id" type="url" description="Id of the charity group" default="1234">
             
@@ -118,7 +101,7 @@
          
           </endpoint>
 
-          <endpoint url="/charity_group.json" method="get" format="json" description="Get a list of charity groups" auth="true">
+          <endpoint url="/charity_group.json" method="get" format="json" description="Get a list of charity groups">
          
           </endpoint>
 
@@ -132,7 +115,7 @@
          
           </endpoint>
 
-          <endpoint url="/charity_group/{{param.id}}.json" method="get" format="json" description="Get the details of a specific charity group" auth="true">
+          <endpoint url="/charity_group/{{param.id}}.json" method="get" format="json" description="Get the details of a specific charity group">
 
             <param name="id" type="url" description="Id of the charity group account" default="1234">
          
@@ -219,3 +202,20 @@
         <script src="scripts/54f7c09d.scripts.js"></script>
 </body>
 </html>
+
+<!--        <header name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <query name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <post name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <json name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/> -->
