@@ -56,23 +56,6 @@
                     format="json"
                     description="Create a user session">
 
-<!--        <header name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <query name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <post name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/>
-            <json name="email" 
-                    type="string" 
-                    description="The email of the user you wish to authenticate."
-                    default="demo@example.com"/> -->
-
             <param name="email" 
                     type="string" 
                     description="The email of the user you wish to authenticate"
@@ -145,15 +128,13 @@
           <endpoint url="/charity.json"
                     method="get" 
                     format="json"
-                    description="Get a list of charities."
-                    auth="true">
+                    description="Get a list of charities.">
           </endpoint>
 
           <endpoint url="/charity/{{param.id}}.json"
                     method="get" 
                     format="json"
-                    description="Get info on a specific charity"
-                    auth="true">
+                    description="Get info on a specific charity">
 
             <param name="id" 
                     type="url" 
@@ -166,7 +147,8 @@
           <endpoint url="/charity_group/{{param.id}}/add_charity.json"
                     method="post" 
                     format="json"
-                    description="Add a new charity to charity group">
+                    description="Add a new charity to charity group"
+                    auth="true">
 
             <param name="id" 
                     type="url" 
@@ -184,8 +166,7 @@
           <endpoint url="/charity_group.json"
                     method="get" 
                     format="json"
-                    description="Get a list of charity groups"
-                    auth="true">
+                    description="Get a list of charity groups">
          
           </endpoint>
 
@@ -218,8 +199,7 @@
           <endpoint url="/charity_group/{{param.id}}.json"
                     method="get" 
                     format="json"
-                    description="Get the details of a specific charity group"
-                    auth="true">
+                    description="Get the details of a specific charity group">
 
             <param name="id" 
                     type="url" 
@@ -401,3 +381,20 @@
         <!-- endbuild -->
 </body>
 </html>
+
+<!--        <header name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <query name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <post name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/>
+            <json name="email" 
+                    type="string" 
+                    description="The email of the user you wish to authenticate."
+                    default="demo@example.com"/> -->
